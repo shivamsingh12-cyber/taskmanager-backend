@@ -6,7 +6,7 @@ const authRoutes = require('./routes/authRoutes');
 const Notification = require('./models/Notification');
 const notificationRoutes = require('./routes/notifications');
 const taskRoutes = require('./routes/taskRoutes');
-const userRoutes = require('./routes/users'); // Import the user routes
+const userRoutes = require('./routes/users'); // Import the user route
 const analyticsRoutes = require('./routes/analytics');
 
 
