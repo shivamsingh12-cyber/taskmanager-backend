@@ -15,7 +15,7 @@ const analyticsRoutes = require('./routes/analytics');
 const app = express();
 // ✅ Enable CORS for frontend domain
 app.use(cors({
-  origin: ['https://taskmanagerfront-rust.vercel.app'], // frontend URL
+  origin: ['https://frontend-black-gamma-72.vercel.app'], // frontend URL
   credentials: true // allows cookies/auth headers
 }));
 app.use(express.json());
