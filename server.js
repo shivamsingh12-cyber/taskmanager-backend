@@ -14,10 +14,20 @@ const analyticsRoutes = require('./routes/analytics');
 
 const app = express();
 // ✅ Enable CORS for frontend domain
-app.use(cors({
-  origin: ['https://frontend-black-gamma-72.vercel.app'], // frontend URL
-  credentials: true // allows cookies/auth headers
-}));
+const allowedOrigins = ['https://frontend-black-gamma-72.vercel.app'];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true, // If you send cookies or Authorization headers
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Routes placeholder
